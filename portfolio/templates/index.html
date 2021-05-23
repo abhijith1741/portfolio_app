@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+		<noscript><link rel="stylesheet" href="{% static 'css/noscript.css' %}"/></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<h1>Abhi<br />
+						Tecz</h1>
+						<p>Do you want a website with an affordable price then you are at the right place.<br>
+						here I am introducing you the best ever techy world</p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+
+				<!-- Header -->
+					<header id="header">
+						<a href="#intro" class="logo scrolly">Abhi Tecz</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class=""><a href="#main" class="scrolly">Home</a></li>
+							<li><a href="#services" class="active scrolly">Services</a></li>
+							<li><a href="#contacts" class="scrolly">Contact</a></li>
+						</ul>
+						<ul class="icons">
+<!--							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>-->
+							<li><a href="https://www.facebook.com/profile.php?id=100041474682404" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://www.instagram.com/steeve_rogerzz/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<h2><a href="#">Join with me and<br />
+									Together we can work.</a></h2>
+									<p>We craft a solution based around our customer's questions and concerns,<br> while providing the technological answers and support to grow and thrive in the modern world..</p>
+								</header>
+								<a href="#" class="image main"><img src="{% static 'images/laptop.png' %}" alt="" /></a>
+								<ul class="actions special">
+									<li><a href="#services" class="button large scrolly">Check More</a></li>
+								</ul>
+							</article>
+<!--						<div class="container" id="services">-->
+									<div class="row text-center" id="services" style="margin-top: -96px;margin-left: 26.4rem;border-top: none;">
+										<h2 class="text-center my_text">Services</h2>
+									</div>
+<!--								</div>-->
+						<!-- Posts -->
+
+							<section class="posts" id="posts">
+								{% for service in services %}
+								<article>
+									<header>
+										<h2>{{service.name}}</h2>
+									</header>
+									<a href="#" class="image fit"><img src="{{service.image.url}}" alt="" /></a>
+									<p>{{service.desc}}</p>
+								</article>
+								{% endfor %}
+							</section>
+							<div class="container" id="contact_id">
+									<div class="row text-center" style="margin-top: 0;margin-left: 20.4rem;">
+										<h2 class="text-center my_text" style="padding: 0 0 0 5.5rem;">Get in touch</h2>
+									</div>
+							</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section id="contacts">
+							<form method="post">
+								{% csrf_token %}
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" required />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="email" name="email" id="email" required/>
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="msg" id="message" rows="3" required></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>Abhijith Lenin<br />
+								Idukki</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="tel:9656425027">9656425027</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto:abhijithlenin180@gmail.com">abhijithlenin180@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.facebook.com/profile.php?id=100041474682404" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="https://www.instagram.com/steeve_rogerzz/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li style="color: aliceblue;">&copy; Abhi Tecz</li><li style="color: aliceblue;">All rights reserved 2021</li></ul>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>
